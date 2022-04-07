@@ -27,12 +27,14 @@ body {
   background: linear-gradient(var(--soft-violet), var(--soft-blue)) no-repeat;
   font-family: 'Kumbh Sans', sans-serif;
   padding-top: 10%;
+  overflow-x: hidden;
+  
 }
 
 h1 {
   text-align: center;
   color: var(--v-dark-gray);
-  margin-bottom: 30px;
+  /* margin-bottom: 13px; */
 }
 
 hr {
@@ -51,7 +53,11 @@ hr {
   width: 330px;
   background: var(--white);
   border-radius: 20px;
-  padding: 0px 25px 30px 25px;
+  /* padding: 0px 25px 30px 25px; */
+  padding-top: 0px;
+  padding-left: 30px;
+  padding-bottom: 25px;
+  padding-right: 25px;
 }
 
 /*------------ Image Wrapper w/ Pattern, Box & Illustration ------------*/
@@ -60,8 +66,8 @@ hr {
   height: 110px;
 }
 
-/* Women Online Illustration */
-.illustration {
+
+.demonstration {
   background-image: url(../images/illustration-woman-online-mobile.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -80,7 +86,7 @@ hr {
   height: 181px;
   width: auto;
   position: relative;
-  bottom: -70px;
+  bottom: -70px; 
 }
 
 /* Illustration Box --> For desktop only */
@@ -101,7 +107,7 @@ hr {
   font-size: 13px;
 }
 
-.label {
+.icon {
   font-weight: 400;
   color: var(--dark-blue);
   display: flex;
@@ -109,15 +115,16 @@ hr {
   cursor: pointer;
 }
 
-.label img {
+.icon img {
   align-self: center;
 }
 
-.label:hover {
-  color: var(--soft-red);
+.icon:hover {
+  /* color: var(--soft-red); */
+  color:rgb(15, 13, 13)
 }
 /* Hide content --> show when clicked */
-.content {
+.response {
   display: none;
 }
 
@@ -126,24 +133,24 @@ hr {
 }
 
 /*-------------------- When Label/Arrow Is Clicked --------------------*/
-.active .label {
+.active .icon {
   font-weight: 700;
 }
 
 /* Rotate downward arrow to point upwards */
-.active .label img {
+.active .icon img {
   transform: rotate(180deg);
 }
 
 /* Display/show content of clicked label */
-.active .content {
+.active .response {
   display: block;
   margin-top: 10px;
   width: 95%;
   line-height: 1.5;
-  font-size: 12px;
-  color: var(--dark-gray);
-  transition: all .3s ease-in;
+  font-size: 15px;
+  color:rgb(99, 95, 95);
+  transition: all .213s ease-out;
 }
 
 @media (min-width: 650px){
@@ -164,7 +171,7 @@ hr {
     height: 140px;
   }
 
-  .illustration {
+  .demonstration {
     top: -135px;
     height: 220px;
     background-image: url(../images/illustration-woman-online-desktop.svg);
@@ -224,7 +231,7 @@ hr {
     transform: translateX(-100px);
   }
 
-  .illustration {
+  .demonstration {
     top: 0px;
     width: 400px;
     height: 400px;
@@ -270,7 +277,7 @@ hr {
     transform: translateX(-100px);
   }
 
-  .illustration {
+  .demonstration {
     top: 0px;
     width: 500px;
     height: 500px;
