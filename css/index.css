@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  --dark-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --v-dark-gray: hsl(237, 12%, 33%);
+  --dark-gray: hsl(240, 6%, 50%);
+  --light-gray: hsl(240, 5%, 91%);
+  --white: hsl(0,0%,100%);
+  --body-font-size: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(var(--soft-violet), var(--soft-blue)) no-repeat;
+  font-family: 'Kumbh Sans', sans-serif;
+  padding-top: 10%;
+}
+
+h1 {
+  text-align: center;
+  color: var(--v-dark-gray);
+  margin-bottom: 30px;
+}
+
+hr {
+  margin: 16px 0px;
+  border: none;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.faq-card {
+  display: grid;
+  grid-template-areas: 'box-a' 'box-b';
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  margin: 30% auto;
+  width: 330px;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 0px 25px 30px 25px;
+}
+
+/*------------ Image Wrapper w/ Pattern, Box & Illustration ------------*/
+.image-wrapper {
+  grid-area: box-a;
+  height: 110px;
+}
+
+/* Women Online Illustration */
+.illustration {
+  background-image: url(../images/illustration-woman-online-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 181px;
+  width: auto;
+  position: relative;
+  top: -110px;
+  z-index: 2;
+}
+
+/* Background Pattern */
+.pattern {
+  background-image: url(../images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 181px;
+  width: auto;
+  position: relative;
+  bottom: -70px;
+}
+
+/* Illustration Box --> For desktop only */
+.box {
+  display: none;
+}
+
+
+/*---------------------------- FAQ Accordian ----------------------------*/
+.faq-accordian {
+  height: 100%;
+  grid-area: box-b;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  font-size: 13px;
+}
+
+.label {
+  font-weight: 400;
+  color: var(--dark-blue);
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.label img {
+  align-self: center;
+}
+
+.label:hover {
+  color: var(--soft-red);
+}
+/* Hide content --> show when clicked */
+.content {
+  display: none;
+}
+
+.arrow {
+  margin-left: 10px;
+}
+
+/*-------------------- When Label/Arrow Is Clicked --------------------*/
+.active .label {
+  font-weight: 700;
+}
+
+/* Rotate downward arrow to point upwards */
+.active .label img {
+  transform: rotate(180deg);
+}
+
+/* Display/show content of clicked label */
+.active .content {
+  display: block;
+  margin-top: 10px;
+  width: 95%;
+  line-height: 1.5;
+  font-size: 12px;
+  color: var(--dark-gray);
+  transition: all .3s ease-in;
+}
+
+@media (min-width: 650px){
+  h1 {
+    font-size: 38px;
+    text-align: center;
+    color: var(--v-dark-gray);
+    margin-bottom: 30px;
+  }
+
+  hr {
+    margin: 16px 0px 32px 0px;
+    border-bottom: 2px solid var(--light-gray);
+  }
+
+  /*------------ Image Wrapper w/ Pattern, Box & Illustration ------------*/
+  .image-wrapper {
+    height: 140px;
+  }
+
+  .illustration {
+    top: -135px;
+    height: 220px;
+    background-image: url(../images/illustration-woman-online-desktop.svg);
+    background-size: contain;
+  }
+
+  .pattern {
+    bottom: 10px;
+    height: 270px;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-size: contain;
+  }
+
+  /*---------------------------- FAQ Accordian ----------------------------*/
+  .faq-card {
+    border-radius: 30px;
+    width: 400px;
+    padding: 0px 35px 35px 35px;
+  }
+
+  .container {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1100px){
+  body {
+    padding: 0px;
+  }
+
+  h1 {
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  hr {
+    margin: 20px 0px;
+  }
+
+  hr:last-of-type {
+    margin-bottom: none;
+  }
+
+  .faq-card{
+    grid-template-areas: 'box-a box-b';
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    margin: auto;
+    width: 70vw;
+    max-width: 1000px;
+    padding: 8% 8% 8% 0;
+  }
+
+  /*------------ Image Wrapper w/ Pattern, Box & Illustration ------------*/
+  .image-wrapper {
+    height: auto;
+    transform: translateX(-100px);
+  }
+
+  .illustration {
+    top: 0px;
+    width: 400px;
+    height: 400px;
+  }
+
+  .pattern {
+    bottom: 50px;
+    height: 600px;
+  }
+
+  .box {
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: -15px;
+    z-index: 3;
+  }
+
+  /*---------------------------- FAQ Accordian ----------------------------*/
+  .faq-accordion{
+    transform: translateX(-40px);
+    margin-left: auto;
+  }
+
+  .container {
+    width: 350px;
+  }
+
+  .arrow {
+    margin-left: 40px;
+  }
+}
+
+@media (min-width: 1290px){
+  .faq-accordion{
+    margin-left: auto;
+    transform: none;
+  }
+
+  /*------------ Image Wrapper w/ Pattern, Box & Illustration ------------*/
+  .image-wrapper {
+    height: auto;
+    transform: translateX(-100px);
+  }
+
+  .illustration {
+    top: 0px;
+    width: 500px;
+    height: 500px;
+  }
+
+  .pattern {
+    bottom: 50px;
+    height: 700px;
+  }
+
+  .box {
+    display: block;
+    position: absolute;
+    top: 40%;
+    z-index: 3;
+  }
+
+  /*---------------------------- FAQ Accordian ----------------------------*/
+  .container {
+    width: 400px;
+  }
+  
+  .arrow {
+    margin-left: 70px;
+  }
+}
